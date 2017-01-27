@@ -1,0 +1,60 @@
+﻿
+
+
+@model IEnumerable<WebPlanesDB.Models.Flight>
+@{
+    ViewBag.Title = "Flights";
+}
+
+<h2>Flights</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("NumbersPlanes", "Flight", FormMethod.Get))
+{
+    <p>
+        The number of planes to the flight:
+        <input type="submit" value="Calculate"  /> 
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>NFlight</th>
+        <th>Nroute</th>
+        <th>timeOut</th>
+        <th>timeIn</th>
+        <th>Numbers</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+          <tr >
+            <td>
+                @Html.DisplayFor(modelItem => item.NFlight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nroute)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.timeOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.timeIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numbers)
+            </td>
+
+            <td>
+               @Html.ActionLink("Select", "Index", new { id = item.FlightID }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.FlightID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FlightID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FlightID })
+            </td>
+   </tr>
+    }
+</table>
+
+

@@ -1,0 +1,73 @@
+﻿@model WebPlanesDB.Models.Route
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Route</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.from_, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.from_)
+                @Html.ValidationMessageFor(model => model.from_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.to_, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.to_)
+                @Html.ValidationMessageFor(model => model.to_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.data1, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.data1)
+                @Html.ValidationMessageFor(model => model.data1)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.data2, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.data2)
+                @Html.ValidationMessageFor(model => model.data2)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Distanse, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Distanse)
+                @Html.ValidationMessageFor(model => model.Distanse)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

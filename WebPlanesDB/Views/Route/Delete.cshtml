@@ -1,0 +1,64 @@
+﻿@model WebPlanesDB.Models.Route
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Route</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.from_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.from_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.to_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.to_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Distanse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distanse)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

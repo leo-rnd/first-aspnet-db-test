@@ -1,0 +1,54 @@
+﻿@model WebPlanesDB.Models.Flight
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Flight</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NFlight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NFlight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nroute)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nroute)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.timeOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.timeOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.timeIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.timeIn)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numbers)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FlightID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

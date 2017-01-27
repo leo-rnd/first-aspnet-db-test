@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebPlanesDB.Models.Airplane>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Flight.FlightID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trassa.TrassaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nbort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataInspection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.places)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flight.FlightID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trassa.TrassaID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nbort)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataInspection)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.places)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AirplaneID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AirplaneID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AirplaneID })
+        </td>
+    </tr>
+}
+
+</table>

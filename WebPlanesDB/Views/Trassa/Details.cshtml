@@ -1,0 +1,58 @@
+﻿@model WebPlanesDB.Models.Trassa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trassa</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.x)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.x)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.y)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.y)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.h)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.h)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.V)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.V)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.time)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrassaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

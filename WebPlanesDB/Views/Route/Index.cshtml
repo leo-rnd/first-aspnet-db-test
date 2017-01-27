@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebPlanesDB.Models.Route>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.from_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.to_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distanse)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.from_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.to_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distanse)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
